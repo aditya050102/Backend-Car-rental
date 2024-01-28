@@ -1,0 +1,28 @@
+name: Code Linting
+
+on:
+  pull_request:
+    paths:
+      - '**/*.cs'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.x'
+
+      - name: Restore dependencies
+        run: dotnet restore Backend/CarRentalAPI/CarRental.sln
+
+      - name: Format code
+        run: dotnet format --check --verbosity normal
+
+      - name: Analyze code
+        run: dotnet analyze --verbosity normal
