@@ -22,7 +22,7 @@ jobs:
         run: dotnet restore Backend/CarRentalAPI/CarRental.sln
 
       - name: Format code
-        run: dotnet format --check Backend/CarRentalAPI/CarRental.sln 
+        run: dotnet format --check --dry-run Backend/CarRentalAPI/CarRental.sln 
 
       - name: Analyze code
         run: dotnet analyze Backend/CarRentalAPI/CarRental.sln
