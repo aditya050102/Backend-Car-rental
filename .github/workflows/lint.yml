@@ -24,9 +24,9 @@ jobs:
       - name: Format code
         run: |
           cd Backend/CarRentalAPI
-          dotnet format -- check --verbosity normal
+          dotnet format -- check 
 
       - name: Analyze code
         run: |
           cd Backend/CarRentalAPI
-          dotnet analyze --verbosity normal
+          dotnet analyze 
