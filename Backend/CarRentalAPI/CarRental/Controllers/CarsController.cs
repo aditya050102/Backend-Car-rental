@@ -2,12 +2,29 @@
 using DAL.Data;
 using DAL.Repository.Implementation;
 using DAL.Repository.Interface;
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc
 using Shared.Models;
 namespace CarRental.Controllers
-{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
     [Route("api/[controller]")
@@ -18,10 +35,10 @@ namespace CarRental.Controllers
 
         public CarsController(ICarsService carsService
         {
-            this.carsService = carsService;
+            this.carsService = carsService
         
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")
 
 
 
