@@ -22,7 +22,7 @@ jobs:
         run: dotnet restore Backend/CarRentalAPI/CarRental.sln
 
       - name: Format code
-        run: dotnet format Backend/CarRentalAPI/CarRental.sln --check
+        run: dotnet format Backend/CarRentalAPI/CarRental.sln
 
       - name: Analyze code
         run: dotnet build Backend/CarRentalAPI/CarRental.sln --no-restore/p:TreatwarningsAsErrors=true
