@@ -10,22 +10,41 @@ namespace CarRental.Controllers
 {
   
 
-    [Route("api/[controller]")]
+    [Route("api/[controller]")
     [ApiController]
     public class CarsController : ControllerBase
     {
         private readonly ICarsService carsService;
 
-        public CarsController(ICarsService carsService)
+        public CarsController(ICarsService carsService
         {
             this.carsService = carsService;
-        }
+        
 
         [Authorize(Roles = "Admin")]
+
+
+
+
+
+
+
+
+
+
         [HttpPost]
         public async Task<IActionResult> PostCar(CarDetails postCar)
         {
             try
+
+
+
+
+
+
+
+
+
             {
                 var carDetail = new CarDetails
                 {
@@ -38,11 +57,11 @@ namespace CarRental.Controllers
 
                 await carsService.CreateAsync(carDetail);
 
-                return Ok(carDetail);
+                return Ok(carDetail)
 
             }
             catch (Exception ex) { 
-                return StatusCode(500, ex.Message);
+                return StatusCode(500, ex.Message)
             
             }
             
@@ -52,6 +71,15 @@ namespace CarRental.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetCars()
+
+
+
+
+
+
+
+
+
         {
             try
             {
