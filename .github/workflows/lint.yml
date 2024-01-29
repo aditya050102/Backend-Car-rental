@@ -25,4 +25,4 @@ jobs:
         run: dotnet format Backend/CarRentalAPI/CarRental.sln
 
       - name: Analyze code
-        run: dotnet build Backend/CarRentalAPI/CarRental.sln 
+        run: dotnet build Backend/CarRentalAPI/CarRental.sln > build_errors.log 2>&1 
